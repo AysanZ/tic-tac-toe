@@ -1,0 +1,66 @@
+@mixin square-box($size, $color) {
+  background-color: $color;
+  width: $size !important;
+  height: $size !important;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 600px;
+  border-radius: 20px;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+
+  .scoreBoard {
+    display: flex;
+    margin-top: 70px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 260px;
+    gap: 50px;
+
+
+    .s1 {
+      display: flex;
+      align-self: end;
+      @include square-box(100px, #ffffff)
+    }
+
+    .s2 {
+      display: flex;
+      align-self: start;
+      @include square-box(100px, springgreen)
+    }
+    .score {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      font-size: 96px;
+      text-align: center;
+      line-height: 200px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(40px);
+      box-shadow: rgba(255, 255, 255, 0.4) 0 0 5px ;
+      color: white;
+    }
+  };
+  .player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: #C3FF6A;
+  }
+}
